@@ -1,0 +1,48 @@
+# UI Reference and Guide Files
+senti-analysis-ui-guide.txt
+
+# Environment files (sensitive data)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+
+# Node modules (covered by subdirectory gitignores but good to have at root)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Cache directories
+.cache
+.npm
+.yarn
+
+# Temporary files
+*.tmp
+*.temp 

@@ -1,0 +1,9 @@
+flask==2.3.3
+werkzeug==2.3.7
+flask-cors
+torch==2.0.1
+transformers==4.30.0
+psutil
+requests==2.31.0
+huggingface-hub
+numpy

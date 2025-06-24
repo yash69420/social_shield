@@ -1,0 +1,21 @@
+*.pyc
+__pycache__/
+.env
+.flaskenv
+*.log
+models/
+metrics/
+*.pkl 
+
+FLASK_APP=app.py
+FLASK_ENV=development
+
+# Environment variables (contains sensitive data)
+.env
+
+# Example: HUGGINGFACE_API_TOKEN=your_huggingface_api_token_here
+# Get your token from: https://huggingface.co/settings/tokens
+
+# For local model development (optional)
+USE_LOCAL_MODEL=true # Set to false in production if using HF API
+LOCAL_MODEL_PATH="./models" # Path to your local model directory 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Shield Background -->
+    <path d="M256 32L448 96V240C448 352 368 448 256 480C144 448 64 352 64 240V96L256 32Z"
+        fill="#2563EB" />
+    <!-- Email Icon -->
+    <path d="M176 192L256 256L336 192M176 192V320H336V192M176 192H336" stroke="white"
+        stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Shield Border -->
+    <path d="M256 32L448 96V240C448 352 368 448 256 480C144 448 64 352 64 240V96L256 32Z"
+        stroke="#1D4ED8" stroke-width="16" stroke-linejoin="round" />
+</svg> 

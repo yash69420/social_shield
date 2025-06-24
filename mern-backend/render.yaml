@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: senti-analysis-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    # Note: Sensitive variables like API keys should be set in Render dashboard, not in this file

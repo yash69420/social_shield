@@ -1,0 +1,1102 @@
+/* animations.css */
+@keyframes shineEffectVertical {
+  0% {
+    background-position: 0 200%;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
+}
+
+.shine-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.shine-container:hover .shine-overlay {
+  opacity: 1;
+  animation: shineEffectVertical 1s linear;
+}
+
+/* Shine Effect - Core Styles */
+.shine-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-overlay {
+  position: absolute;
+  inset: 0; /* shorthand for top, right, bottom, left: 0 */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Direction Variants */
+.shine-vertical .shine-overlay {
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+}
+
+.shine-horizontal .shine-overlay {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+.shine-diagonal .shine-overlay {
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+}
+
+/* Animation Keyframes */
+@keyframes shineEffectHorizontal {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shineEffectDiagonal {
+  0% {
+    background-position: 200% 200%;
+  }
+  100% {
+    background-position: -100% -100%;
+  }
+}
+
+/* Hover Animation Triggers */
+.shine-vertical:hover .shine-overlay {
+  opacity: 1;
+  animation: shineEffectVertical 1s linear;
+}
+
+.shine-horizontal:hover .shine-overlay {
+  opacity: 1;
+  animation: shineEffectHorizontal 1s linear;
+}
+
+.shine-diagonal:hover .shine-overlay {
+  opacity: 1;
+  animation: shineEffectDiagonal 1s linear;
+}
+
+/* Speed Variants */
+.shine-slow:hover .shine-overlay {
+  animation-duration: 1.5s;
+}
+
+.shine-fast:hover .shine-overlay {
+  animation-duration: 0.7s;
+}
+
+/* Color Variants */
+.shine-white .shine-overlay {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-gold .shine-overlay {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(255, 215, 0, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-blue .shine-overlay {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(0, 120, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-purple .shine-overlay {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(128, 0, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Fixed Shine Effect - A completely reusable CSS-only solution */
+
+/* Base container */
+.shine-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Auto-inject the overlay element with pseudo-element */
+.shine-container::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top, right, bottom, left: 0 */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 1; /* Keep this below content but above background */
+}
+
+/* Direction variants */
+.shine-vertical::after {
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+}
+
+.shine-horizontal::after {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+.shine-diagonal::after {
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+}
+
+/* Animation keyframes */
+@keyframes shineEffectVertical {
+  0% {
+    background-position: 0 200%;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
+}
+
+@keyframes shineEffectHorizontal {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shineEffectDiagonal {
+  0% {
+    background-position: 200% 200%;
+  }
+  100% {
+    background-position: -100% -100%;
+  }
+}
+
+/* Hover animation triggers */
+.shine-vertical:hover::after {
+  opacity: 1;
+  animation: shineEffectVertical 1s linear;
+}
+
+.shine-horizontal:hover::after {
+  opacity: 1;
+  animation: shineEffectHorizontal 1s linear;
+}
+
+.shine-diagonal:hover::after {
+  opacity: 1;
+  animation: shineEffectDiagonal 1s linear;
+}
+
+/* Speed variants */
+.shine-slow:hover::after {
+  animation-duration: 1.5s;
+}
+
+.shine-fast:hover::after {
+  animation-duration: 0.7s;
+}
+
+/* Color variants */
+.shine-white::after {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-gold::after {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(255, 215, 0, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-blue::after {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(0, 120, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.shine-purple::after {
+  background-image: linear-gradient(
+    var(--shine-direction, to top),
+    transparent 0%,
+    rgba(128, 0, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* =================== ADVANCED BUTTON EFFECTS =================== */
+
+/* ---- Pulse Glow Effect ---- */
+.btn-pulse {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-pulse:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.4);
+}
+
+.btn-pulse::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 4px; /* Control the border width */
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff, #33ff33);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.btn-pulse:hover::before {
+  opacity: 1;
+  animation: borderRotate 2s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 130% 0%;
+  }
+}
+
+/* ---- 3D Lift Effect ---- */
+.btn-3d {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.btn-3d:hover {
+  transform: translateY(-5px) rotateX(10deg);
+  box-shadow: 0 10px 20px rgba(50, 50, 93, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-3d:hover::before {
+  transform: translateZ(-30px);
+  opacity: 0.8;
+}
+
+.btn-3d::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 5%;
+  width: 90%;
+  height: 10px;
+  background: inherit;
+  filter: blur(12px) brightness(60%);
+  opacity: 0.3;
+  border-radius: 50%;
+  transform: translateZ(-40px);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+}
+
+/* ---- Liquid Fill Effect ---- */
+.btn-liquid {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-liquid::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.25);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-liquid:hover::before {
+  height: 100%;
+}
+
+.btn-liquid:hover {
+  color: white;
+}
+
+/* ---- Magnetic Particles Effect (simulated with pseudo-elements) ---- */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-magnetic::before,
+.btn-magnetic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 10%,
+      transparent 10.5%
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.5%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.5%);
+  background-position: 0% 0%, 30% 50%, 70% 20%;
+  background-size: 200px 200px, 150px 150px, 180px 180px;
+  background-repeat: repeat-x;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.btn-magnetic:hover::before {
+  opacity: 1;
+  left: 0;
+  animation: particleMove1 1.5s infinite linear;
+}
+
+.btn-magnetic:hover::after {
+  opacity: 1;
+  left: 0;
+  animation: particleMove2 1.7s infinite linear 0.3s;
+}
+
+@keyframes particleMove1 {
+  0% {
+    background-position: 0% 0%, 30% 50%, 70% 20%;
+  }
+  100% {
+    background-position: 100% 0%, 130% 50%, 170% 20%;
+  }
+}
+
+@keyframes particleMove2 {
+  0% {
+    background-position: 0% 50%, 30% 0%, 70% 80%;
+  }
+  100% {
+    background-position: 100% 50%, 130% 0%, 170% 80%;
+  }
+}
+
+/* ---- Spotlight Effect ---- */
+.btn-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-spotlight::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0s, opacity 0.5s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-spotlight:hover::before {
+  opacity: 0.15;
+  transform: scale(1);
+  transition: transform 1s, opacity 0.5s;
+}
+
+/* Add event handler to track mouse position in JavaScript */
+/* Example in JS:
+  const button = document.querySelector('.btn-spotlight');
+  button.addEventListener('mousemove', (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    button.style.setProperty('--mouse-x', `${x}px`);
+    button.style.setProperty('--mouse-y', `${y}px`);
+    button.style.setProperty('--opacity', '1');
+  });
+  button.addEventListener('mouseleave', () => {
+    button.style.setProperty('--opacity', '0');
+  });
+*/
+
+/* ---- Neon Border Effect ---- */
+.btn-neon {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid transparent;
+  overflow: visible;
+}
+
+.btn-neon::before,
+.btn-neon::after {
+  content: "";
+  position: absolute;
+  inset: -3px; /* Slightly larger than the button */
+  border-radius: inherit;
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff, #33ff33);
+  background-size: 400% 400%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-neon::before {
+  filter: blur(8px);
+}
+
+.btn-neon::after {
+  filter: blur(4px);
+}
+
+.btn-neon:hover {
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-neon:hover::before,
+.btn-neon:hover::after {
+  opacity: 1;
+  animation: neonGlow 2s linear infinite;
+}
+
+@keyframes neonGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---- Ripple Effect ---- */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-ripple:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* ---- Shake Effect ---- */
+.btn-shake:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* ---- Staggered Text Effect ---- */
+.btn-text-stagger {
+  position: relative;
+}
+
+.btn-text-stagger span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-text-stagger:hover span {
+  animation: textStagger 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes textStagger {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* To use this effect, you need to wrap each letter in a span
+   For example: 
+   <button class="btn-text-stagger">
+     <span>C</span><span>o</span><span>n</span><span>n</span><span>e</span><span>c</span><span>t</span>
+   </button>
+*/
+
+/* === Combined Effects === */
+/* Multi-effect combo for maximum impact */
+.btn-super {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn-super::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+}
+
+.btn-super::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-super:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(50, 50, 93, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-super:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-super:hover::after {
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+/* ---- Borderless Flow Effect ---- */
+.btn-border-flow {
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s ease;
+  border: none; /* Remove border */
+  z-index: 1;
+}
+
+.btn-border-flow::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Increase the size a bit */
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.3),
+    rgba(99, 102, 241, 0.6),
+    rgba(139, 92, 246, 0.8),
+    rgba(99, 102, 241, 0.6),
+    rgba(59, 130, 246, 0.3)
+  );
+  background-size: 300% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-border-flow:hover {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-border-flow:hover::before {
+  opacity: 1;
+  animation: borderFlow 3s ease infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---- Cosmic Glow Effect - No Movement ---- */
+.btn-cosmic {
+  position: relative;
+  overflow: visible;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.btn-cosmic::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.4),
+    rgba(99, 102, 241, 0.1),
+    rgba(139, 92, 246, 0.4),
+    rgba(99, 102, 241, 0.1),
+    rgba(59, 130, 246, 0.4)
+  );
+  z-index: -2;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.btn-cosmic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+}
+
+.btn-cosmic:hover {
+  color: white;
+}
+
+.btn-cosmic:hover::before {
+  opacity: 1;
+  animation: cosmicPulse 4s ease infinite;
+}
+
+@keyframes cosmicPulse {
+  0% {
+    filter: blur(5px) brightness(1);
+  }
+  50% {
+    filter: blur(8px) brightness(1.2);
+  }
+  100% {
+    filter: blur(5px) brightness(1);
+  }
+}
+
+/* ---- Aura Effect - No Movement ---- */
+.btn-aura {
+  position: relative;
+  border: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-aura::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 0.6),
+    rgba(37, 99, 235, 0.8)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-aura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.btn-aura:hover::before {
+  opacity: 1;
+}
+
+.btn-aura:hover::after {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* ---- Combined Super Blue Effect ---- */
+.btn-super-blue {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.btn-super-blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0) 0%,
+    rgba(59, 130, 246, 0.1) 50%,
+    rgba(59, 130, 246, 0) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.btn-super-blue::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.3),
+    rgba(37, 99, 235, 0.6),
+    rgba(29, 78, 216, 0.3)
+  );
+  background-size: 200% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-super-blue:hover {
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-super-blue:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-super-blue:hover::after {
+  opacity: 1;
+  animation: superBlueFlow 3s linear infinite;
+}
+
+@keyframes superBlueFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ---- Enhanced Intense Blue Flow Effect (Subtle) ---- */
+.btn-intense-blue {
+  position: relative;
+  overflow: visible;
+  transition: none;
+  border: none;
+  z-index: 1;
+}
+
+.btn-intense-blue::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #0047ff,
+    /* More intense blue */ #3b82f6,
+    #60a5fa,
+    #2563eb,
+    #0047ff /* More intense blue */
+  );
+  background-size: 300% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Add a subtle outer glow */
+.btn-intense-blue::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 71, 255, 0.3),
+    rgba(59, 130, 246, 0.2),
+    rgba(0, 71, 255, 0.3)
+  );
+  z-index: -2;
+  opacity: 0;
+  filter: blur(4px);
+  transition: opacity 0.4s ease;
+}
+
+.btn-intense-blue:hover {
+  transform: none; /* No movement */
+  box-shadow: none; /* Remove shadow effect */
+}
+
+.btn-intense-blue:hover::before {
+  opacity: 1;
+  animation: intenseBlueFlow 3s linear infinite;
+}
+
+.btn-intense-blue:hover::after {
+  opacity: 1;
+}
+
+@keyframes intenseBlueFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---- Enhanced Intense Purple Flow Effect (Subtle) ---- */
+.btn-intense-purple {
+  position: relative;
+  overflow: visible;
+  transition: none;
+  border: none;
+  z-index: 1;
+}
+
+.btn-intense-purple::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #8b00ff,
+    /* More intense purple */ #9b5de5,
+    #b68cff,
+    #7e3af2,
+    #8b00ff /* More intense purple */
+  );
+  background-size: 300% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Add a subtle outer glow */
+.btn-intense-purple::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 0, 255, 0.3),
+    rgba(155, 93, 229, 0.2),
+    rgba(139, 0, 255, 0.3)
+  );
+  z-index: -2;
+  opacity: 0;
+  filter: blur(4px);
+  transition: opacity 0.4s ease;
+}
+
+.btn-intense-purple:hover {
+  transform: none; /* No movement */
+  box-shadow: none; /* Remove shadow effect */
+}
+
+.btn-intense-purple:hover::before {
+  opacity: 1;
+  animation: intensePurpleFlow 3s linear infinite;
+}
+
+.btn-intense-purple:hover::after {
+  opacity: 1;
+}
+
+@keyframes intensePurpleFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
