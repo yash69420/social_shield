@@ -41,7 +41,7 @@ Edit each `.env` file with your credentials:
 
 ```bash
 VITE_API_URL=http://localhost:5000
-VITE_FLASK_API_URL=http://localhost:5001
+VITE_FLASK_API_URL=http://localhost:3000
 VITE_GOOGLE_CLIENT_ID=your_google_client_id
 VITE_REDIRECT_URI=http://localhost:5000/api/auth/google/callback
 ```
@@ -56,7 +56,7 @@ REDIRECT_URI=http://localhost:5000/api/auth/google/callback
 JWT_SECRET=your_super_secure_jwt_secret_minimum_32_characters
 GEMINI_API_KEY=your_gemini_api_key
 FRONTEND_URL=http://localhost:5173
-FLASK_API_URL=http://localhost:5001
+FLASK_API_URL=http://localhost:3000
 ```
 
 #### ML Service (`.env` in `senti-analysis-flask-backend/`)
@@ -88,7 +88,7 @@ cd senti-analysis && npm run dev
 
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:5000
-- **ML Service**: http://localhost:5001
+- **ML Service**: http://localhost:3000
 
 ## 🔑 Getting API Keys (Optional for Basic Testing)
 
@@ -121,7 +121,7 @@ cd senti-analysis && npm run dev
 curl http://localhost:5000/health
 
 # Check ML service
-curl http://localhost:5001/health
+curl http://localhost:3000/health
 
 # Check frontend (should show React app)
 open http://localhost:5173
@@ -131,7 +131,7 @@ open http://localhost:5173
 
 ```bash
 # Test ML analysis (without authentication)
-curl -X POST http://localhost:5001/api/analyze \
+curl -X POST http://localhost:3000/api/analyze \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Hello, this is a test email!",
@@ -185,7 +185,7 @@ Expected response:
 
 ```bash
 # Kill processes on specific ports
-npx kill-port 5000 5001 5173
+npx kill-port 5000 3000 5173
 
 # Or use different ports in .env files
 ```

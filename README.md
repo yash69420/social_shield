@@ -80,7 +80,7 @@ graph TB
 
     subgraph Backend["Backend Services"]
         B1[Express API Port 5000]
-        E1[Flask ML Port 5001]
+        E1[Flask ML Port 3000]
     end
 
     subgraph Data["Data Layer"]
@@ -199,7 +199,7 @@ cp flask-backend/.env.example flask-backend/.env
 ```bash
 # API Endpoints
 VITE_API_URL=http://localhost:5000
-VITE_FLASK_API_URL=http://localhost:5001
+VITE_FLASK_API_URL=http://localhost:3000
 
 # Google OAuth
 VITE_GOOGLE_CLIENT_ID=your_google_client_id
@@ -230,7 +230,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 # Services
 FRONTEND_URL=http://localhost:5173
-FLASK_API_URL=http://localhost:5001
+FLASK_API_URL=http://localhost:3000
 PORT=5000
 NODE_ENV=development
 ```
@@ -245,7 +245,7 @@ USE_LOCAL_MODEL=true
 
 # Development
 FLASK_ENV=development
-PORT=5001
+PORT=3000
 DEBUG=true
 ```
 
@@ -312,7 +312,7 @@ npm run dev
 ```bash
 cd flask-backend
 python app.py
-# ML service running on http://localhost:5001
+# ML service running on http://localhost:3000
 ```
 
 #### Terminal 3: Frontend
@@ -395,7 +395,7 @@ curl -X GET "http://localhost:5000/api/gmail/emails?limit=10" \
 Analyze email sentiment and security.
 
 ```bash
-curl -X POST http://localhost:5001/api/analyze \
+curl -X POST http://localhost:3000/api/analyze \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Email content to analyze",
@@ -596,7 +596,7 @@ docker run -p 5173:5173 social-shield-frontend
 
 # Flask ML
 docker build -t social-shield-ml ./flask-backend
-docker run -p 5001:5001 --env-file .env social-shield-ml
+docker run -p 3000:3000 --env-file .env social-shield-ml
 ```
 
 ### Performance Optimization

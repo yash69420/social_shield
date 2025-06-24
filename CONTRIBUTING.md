@@ -140,7 +140,7 @@ Install these extensions for the best development experience:
 ```bash
 # Frontend (.env)
 VITE_API_URL=http://localhost:5000
-VITE_FLASK_API_URL=http://localhost:5001
+VITE_FLASK_API_URL=http://localhost:3000
 VITE_DEBUG_MODE=true
 
 # Backend (.env)
@@ -150,7 +150,7 @@ MONGODB_URI=mongodb://localhost:27017/social-shield-dev
 
 # Flask (.env)
 FLASK_ENV=development
-PORT=5001
+PORT=3000
 DEBUG=true
 ```
 

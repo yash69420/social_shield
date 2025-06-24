@@ -22,7 +22,7 @@ This document provides comprehensive documentation for all Social Shield API end
 ### Development
 
 - **Backend API**: `http://localhost:5000`
-- **ML Service**: `http://localhost:5001`
+- **ML Service**: `http://localhost:3000`
 
 ### Production
 
@@ -208,7 +208,7 @@ Analyze email content for sentiment and security threats.
 #### Request
 
 ```bash
-curl -X POST http://localhost:5001/api/analyze \
+curl -X POST http://localhost:3000/api/analyze \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Congratulations! You have won $1,000,000! Click here to claim your prize now!",
@@ -277,7 +277,7 @@ Analyze multiple emails in a single request.
 #### Request
 
 ```bash
-curl -X POST http://localhost:5001/api/analyze/batch \
+curl -X POST http://localhost:3000/api/analyze/batch \
   -H "Content-Type: application/json" \
   -d '{
     "emails": [
@@ -758,7 +758,7 @@ SUBJECT="$2"
 SENDER="$3"
 TOKEN="$4"
 
-curl -X POST http://localhost:5001/api/analyze \
+curl -X POST http://localhost:3000/api/analyze \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKEN" \
   -d "{
