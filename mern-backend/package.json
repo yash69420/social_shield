@@ -1,7 +1,7 @@
 {
   "name": "senti-analysis-backend",
   "version": "1.0.0",
-  "description": "Backend API for sentiment analysis application",
+  "description": "Node.js backend API for email security and sentiment analysis platform with Gmail integration",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -25,9 +25,17 @@
     "nodemon": "^3.0.0"
   },
   "keywords": [
-    "sentiment",
-    "analysis",
-    "email",
+    "email-security",
+    "sentiment-analysis",
+    "phishing-detection",
+    "gmail-api",
+    "nodejs",
+    "express",
+    "mongodb",
+    "oauth2",
+    "jwt",
+    "rest-api",
+    "machine-learning",
     "security"
   ],
   "author": "",

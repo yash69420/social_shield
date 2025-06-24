@@ -3,6 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "AI-powered email security and sentiment analysis platform with Gmail integration",
+  "keywords": [
+    "email-security",
+    "sentiment-analysis",
+    "phishing-detection",
+    "gmail-integration",
+    "react",
+    "vite",
+    "tailwindcss",
+    "machine-learning",
+    "ai",
+    "security",
+    "oauth2",
+    "dashboard",
+    "analytics"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
