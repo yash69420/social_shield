@@ -9,6 +9,12 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![GitHub Issues](https://img.shields.io/github/issues/yash69420/social_shield?style=flat-square)](https://github.com/yash69420/social_shield/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yash69420/social_shield?style=flat-square)](https://github.com/yash69420/social_shield/pulls)
+[![Contributors](https://img.shields.io/github/contributors/yash69420/social_shield?style=flat-square)](https://github.com/yash69420/social_shield/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/yash69420/social_shield?style=flat-square)](https://github.com/yash69420/social_shield/commits/main)
+
 **🚀 An intelligent email analysis platform that uses AI to detect phishing attempts, analyze sentiment, and protect users from email-based threats.**
 
 [Demo](https://senti-analysis.vercel.app/) • [Quick Start](./docs/quick-start.md) • [API Reference](./docs/api.md) • [Contributing](./CONTRIBUTING.md)

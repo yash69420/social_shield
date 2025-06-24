@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        python-version: [3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Dependencies
+        run: |
+          # Frontend
+          cd mern-frontend
+          npm ci
+          cd ..
+
+          # Backend
+          cd mern-backend
+          npm ci
+          cd ..
+
+          # Flask Backend
+          cd flask-backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          cd ..
+
+      - name: Run Tests
+        run: |
+          # Frontend Tests
+          cd mern-frontend
+          npm run test
+          cd ..
+
+          # Backend Tests
+          cd mern-backend
+          npm run test
+          cd ..
+
+          # Flask Tests
+          cd flask-backend
+          python -m pytest
+          cd ..
+
+      - name: Run Linting
+        run: |
+          # Frontend Lint
+          cd mern-frontend
+          npm run lint
+          cd ..
+
+          # Backend Lint
+          cd mern-backend
+          npm run lint
+          cd ..
+
+          # Flask Lint
+          cd flask-backend
+          flake8 .
+          cd ..
