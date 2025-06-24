@@ -78,15 +78,15 @@ Before contributing, make sure you have:
 
    ```bash
    # Frontend
-   cd senti-analysis
+   cd mern-frontend
    npm install
 
    # Backend
-   cd ../senti-analysis-backend
+   cd ../mern-backend
    npm install
 
    # Python ML service
-   cd ../senti-analysis-flask-backend
+   cd ../flask-backend
    pip install -r requirements.txt
    ```
 
@@ -94,9 +94,9 @@ Before contributing, make sure you have:
 
    ```bash
    # Copy example files
-   cp senti-analysis/.env.example senti-analysis/.env
-   cp senti-analysis-backend/.env.example senti-analysis-backend/.env
-   cp senti-analysis-flask-backend/.env.example senti-analysis-flask-backend/.env
+   cp mern-frontend/.env.example mern-frontend/.env
+   cp mern-backend/.env.example mern-backend/.env
+   cp flask-backend/.env.example flask-backend/.env
 
    # Edit each .env file with your API keys
    ```
@@ -105,13 +105,13 @@ Before contributing, make sure you have:
 
    ```bash
    # Terminal 1: Backend
-   cd senti-analysis-backend && npm run dev
+   cd mern-backend && npm run dev
 
    # Terminal 2: ML Service
-   cd senti-analysis-flask-backend && python app.py
+   cd flask-backend && python app.py
 
    # Terminal 3: Frontend
-   cd senti-analysis && npm run dev
+   cd mern-frontend && npm run dev
    ```
 
 ## 💻 Development Setup
@@ -165,7 +165,7 @@ MONGODB_URI=mongodb://localhost:27017/social-shield-test
 
 ```
 social-shield/
-├── 📁 senti-analysis/              # React Frontend
+├── 📁 mern-frontend/              # React Frontend
 │   ├── 📁 src/
 │   │   ├── 📁 components/          # Reusable components
 │   │   │   ├── 📁 ui/              # Base UI components
@@ -177,14 +177,14 @@ social-shield/
 │   │   └── 📁 styles/              # CSS and animations
 │   ├── 📁 public/                  # Static assets
 │   └── 📄 package.json
-├── 📁 senti-analysis-backend/      # Node.js API
+├── 📁 mern-backend/              # Node.js API
 │   ├── 📁 controllers/             # Route handlers
 │   ├── 📁 models/                  # Database models
 │   ├── 📁 routes/                  # API routes
 │   ├── 📁 middleware/              # Custom middleware
 │   ├── 📁 utils/                   # Utility functions
 │   └── 📁 tests/                   # Backend tests
-└── 📁 senti-analysis-flask-backend/ # Python ML Service
+└── 📁 flask-backend/             # Python ML Service
     ├── 📄 app.py                   # Flask app
     ├── 📁 models/                  # ML models
     ├── 📁 utils/                   # Python utilities
