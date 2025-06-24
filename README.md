@@ -775,9 +775,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by the Social Shield Team**
-
-[Website](https://social-shield.com) • [Twitter](https://twitter.com/socialshield) • [LinkedIn](https://linkedin.com/company/socialshield)
+**Made with ❤️ by [@yash69420](https://github.com/yash69420)**
 
 **⭐ Star this repo if you find it helpful!**
 
